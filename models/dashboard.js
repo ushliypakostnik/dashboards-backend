@@ -4,6 +4,12 @@ const DashboardSchema = new mongoose.Schema({
   path: {
     type: String,
     required: true,
+    unique: true,
+  },
+  order: {
+    type: Number,
+    required: true,
+    unique: true,
   },
   widgets: {
     type: Array,
