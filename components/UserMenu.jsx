@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 // eslint-disable-next-line no-unused-vars, import/no-extraneous-dependencies
 import { CurrentUserNav, Box } from '@admin-bro/design-system';
 
-import config from '../config';
+// import config from '../config';
 
 // hoc
 // eslint-disable-next-line import/extensions, import/no-unresolved
@@ -26,15 +26,17 @@ const GlobalStyle = createGlobalStyle`
 const UserMenu = (props) => {
   const { session, paths } = props;
 
-  const dropActions = [{
-    label: 'Logout',
-    onClick: (event) => {
-      event.preventDefault();
-      // eslint-disable-next-line no-undef
-      window.location.href = paths.logoutPath;
+  const dropActions = [
+    {
+      label: 'Logout',
+      onClick: (event) => {
+        event.preventDefault();
+        // eslint-disable-next-line no-undef
+        window.location.href = paths.logoutPath;
+      },
+      icon: 'Logout',
     },
-    icon: 'Logout',
-  }];
+  ];
 
   // console.log('session', session);
 
@@ -42,12 +44,7 @@ const UserMenu = (props) => {
     <>
       <GlobalStyle />
       <Box flexShrink={0}>
-        <CurrentUserNav
-          name={session.email}
-          title={session.role}
-          avatarUrl={null}
-          dropActions={dropActions}
-        />
+        <CurrentUserNav name={session.email} title={session.role} avatarUrl={null} dropActions={dropActions} />
       </Box>
     </>
   );
@@ -57,7 +54,4 @@ const UserMenu = (props) => {
 
 const OverridableLoggedIn = allowOverride(UserMenu, 'UserMenu');
 
-export {
-  OverridableLoggedIn as default,
-  OverridableLoggedIn as UserMenu,
-};
+export { OverridableLoggedIn as default, OverridableLoggedIn as UserMenu };

@@ -1,7 +1,4 @@
-function allowOverride(
-  OriginalComponent,
-  name,
-) {
+function allowOverride(OriginalComponent, name) {
   const WrapperComponent = (props) => {
     // eslint-disable-next-line no-undef
     let globalAny = window;
@@ -11,10 +8,7 @@ function allowOverride(
     // eslint-disable-next-line no-unused-vars
     let Component = OriginalComponent;
 
-    if (globalAny.AdminBro
-      && globalAny.AdminBro.UserComponents
-      && globalAny.AdminBro.UserComponents[name]
-    ) {
+    if (globalAny.AdminBro && globalAny.AdminBro.UserComponents && globalAny.AdminBro.UserComponents[name]) {
       Component = globalAny.AdminBro.UserComponents[name];
       return <Component {...props} OriginalComponent={OriginalComponent} />;
     }
@@ -25,7 +19,4 @@ function allowOverride(
   return WrapperComponent;
 }
 
-export {
-  allowOverride as default,
-  allowOverride,
-};
+export { allowOverride as default, allowOverride };

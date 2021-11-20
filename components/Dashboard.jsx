@@ -17,7 +17,7 @@ const Dashboard = () => {
 
   return (
     <Box variant="grey">
-      <Box variant="white">{ data.header }</Box>
+      <Box variant="white">{data.header}</Box>
     </Box>
   );
 };
