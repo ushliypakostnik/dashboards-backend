@@ -18,9 +18,6 @@ import api from './api/index';
 
 const app = express();
 
-// API
-app.use(api);
-
 AdminBro.registerAdapter(AdminBroMongoose);
 
 // CORS
@@ -37,6 +34,9 @@ if (config.CORS_ENABLED) {
 
 // db url
 const mongoDB = process.env.MONGOLAB_URI || config.PASS.DB.url;
+
+// API
+app.use(api);
 
 // Admin Bro
 
