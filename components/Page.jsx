@@ -2,9 +2,9 @@
 import { Box } from '@admin-bro/design-system';
 
 const Page = () => (
-    <Box variant="grey">
-      <Box variant="white">Test page</Box>
-    </Box>
+  <Box variant="grey">
+    <Box variant="white">Test page</Box>
+  </Box>
 );
 
 export default Page;

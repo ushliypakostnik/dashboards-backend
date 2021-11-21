@@ -1,6 +1,12 @@
+/* eslint-disable import/named */
 import mongoose from 'mongoose';
 
 const DashboardSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    unique: true,
+  },
   path: {
     type: String,
     required: true,
@@ -12,7 +18,7 @@ const DashboardSchema = new mongoose.Schema({
     unique: true,
   },
   widgets: {
-    type: Array,
+    type: [String],
     required: true,
   },
 });

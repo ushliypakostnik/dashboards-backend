@@ -7,17 +7,18 @@ if (env === 'production') {
   require('dotenv').config();
 }
 
-const PORT = 8083;
+const PORT = 8084;
 
 const common = {
   VERSION: '0.1.0',
-  TITLE: 'Company',
+  TITLE: 'Dashboards constructor',
   PORT: process.env.PORT || PORT,
   PASS: {
     DB: {
       url: process.env.DB_URL || PASS.DB.url,
     },
     COOKIES: process.env.COOKIES || PASS.COOKIES,
+    RANDOM_BYTES: PASS.RANDOM_BYTES,
   },
   ROOT_PATH: '/',
   BUCKET_ROOT: '/home/levon/projects/github/express-babel-bro',
@@ -31,6 +32,12 @@ const common = {
     edit: 'edit',
     show: 'show',
   },
+  WIDGETS: [
+    { value: 'widget1', label: 'widget1' },
+    { value: 'widget2', label: 'widget2' },
+    { value: 'top1', label: 'top1' },
+    { value: 'collection1', label: 'collection1' },
+  ],
 };
 
 const development = {

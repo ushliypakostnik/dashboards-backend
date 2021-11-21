@@ -13,9 +13,8 @@ import User from './models/user';
 
 import Users from './resources/users';
 import Dashboards from './resources/dashboars';
-import Widgets from './resources/widgets';
 
-import api from './routes/index';
+import api from './api/index';
 
 const app = express();
 
@@ -55,7 +54,6 @@ const run = async () => {
     resources: [
       Users,
       Dashboards,
-      Widgets,
     ],
     branding: {
       companyName: config.TITLE,

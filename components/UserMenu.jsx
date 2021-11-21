@@ -10,17 +10,6 @@ import allowOverride from './hoc/allowOverride';
 
 // eslint-disable-next-line no-unused-vars
 const GlobalStyle = createGlobalStyle`
-  section[data-testid="property-edit-image.key"] {
-    display: none;
-  }
-  
-  section[data-testid="property-edit-image.type"] {
-    display: none;
-  }
-  
-  section[data-testid="property-edit-image.image.file"] .admin-bro_Label {
-    display: none;
-  }
 `;
 
 const UserMenu = (props) => {
