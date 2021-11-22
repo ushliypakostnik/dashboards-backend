@@ -20,7 +20,9 @@ api.get('/api/dashboards', jsonParser, (req, res) => {
   Dashboard.find((error, dashboards) => {
     if (error) return res.status(400);
 
-    const arr = dashboards.map(dashboard => ({ name: dashboard.name, path: dashboard.path, order: dashboard.order }));
+    const arr = dashboards
+      .map(dashboard => ({ name: dashboard.name, path: dashboard.path, order: dashboard.order }))
+      .sort((a, b) => a.order - b.order);
 
     return res.status(200).json(arr);
   });
@@ -32,7 +34,7 @@ api.get('/api/dashboard/:path', jsonParser, (req, res) => {
     if (error) return res.status(400);
 
     const widgets = dashboard.widgets.filter(el => el !== null);
-    const obj = { name: dashboard.name, path: dashboard.path, widgets, id: dashboard.id };
+    const obj = { id: dashboard.id, widgets };
 
     return res.status(200).json(obj);
   });

@@ -36,6 +36,7 @@ if (config.CORS_ENABLED) {
 const mongoDB = process.env.MONGOLAB_URI || config.PASS.DB.url;
 
 // API
+app.get('/favicon.ico', (req, res) => res.status(204));
 app.use(api);
 
 // Admin Bro
