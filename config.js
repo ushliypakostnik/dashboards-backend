@@ -7,7 +7,7 @@ if (env === 'production') {
   require('dotenv').config();
 }
 
-const PORT = 8083;
+const PORT = 8085;
 
 const common = {
   VERSION: '0.1.0',
@@ -35,6 +35,7 @@ const common = {
   WIDGETS: [
     { value: 'widget1', label: 'widget1' },
     { value: 'widget2', label: 'widget2' },
+    { value: 'widget3', label: 'widget3' },
     { value: 'top1', label: 'top1' },
     { value: 'collection1', label: 'collection1' },
   ],
